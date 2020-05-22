@@ -1,9 +1,10 @@
-class Player{
-	public:
-		
-	public:
-		void Kbhit();	//键盘响应
-		void Hide();	//隐藏光标 
-		
-};
+#pragma once
 
+class Player {
+private:
+
+public:
+	void Kbhit();	//键盘响应
+	
+
+};

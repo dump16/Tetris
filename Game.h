@@ -1,14 +1,13 @@
-class Game{
-	public:
-		
-	public:
-		void Welcome();	//欢迎界面 
-		void Run();	//运行
-		void End();	//结束
-		void Over();	//结束界面 
-		void Pause();	//暂停
-		void Continue();	//继续 
-		void Exit();	//退出
-		void New();	//新游戏
-		
+#pragma once
+
+class Game {
+private:
+
+public:
+	void NewGame();			//	开始新游戏
+	void GameOver();		//	结束游戏
+	void Pause();			//	暂停
+	void Continue();		//	继续 
+	void Quit();			//	退出游戏
+
 };
