@@ -2,17 +2,23 @@
 #include"Game.h"
 #include"Render.h"
 #include"Player.h"
+
 #include<graphics.h>
 #include<conio.h>
 #include<ctime>
+#include<cstring>
+#include<thread>
+using namespace std;
+
+#define	UNIT 20		//	方块单元的边长
 
 int main()
 {
-	Render x;
-	x.Welcome();
+	Render render;
+	render.Welcome();
 
 
-	_getch();		// 运行完等待，不闪退
-	closegraph();	//关闭绘图窗口
+	_getch();		//	按任意键退出
+	closegraph();	//	关闭绘图窗口
 	return 0;
 }

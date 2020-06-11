@@ -2,23 +2,27 @@
 #include"Game.h"
 #include"Render.h"
 #include"Player.h"
+
 #include<graphics.h>
 #include<conio.h>
 #include<ctime>
+#include<cstring>
+#include<thread>
+using namespace std;
 
-#define	UNIT 20	//	每个方块单元的边长
+#define	UNIT 20		//	方块单元的边长
 
 //	启动界面
 void Render::Welcome() {
 
-	//	绘制游戏界面
+	//	绘制游戏界面，大小为 50*30 单元
 	initgraph(UNIT * 50, UNIT * 30);
 
-	//	修改窗口名称
+	//	设置窗口标题
 	HWND hWnd = GetHWnd();
 	SetWindowText(hWnd, _T("我罗斯方块"));
 
-	// 设置图案填充的背景色为透明
+	//	设置文字背景颜色
 	setbkmode(TRANSPARENT);
 
 	//	初始化随机数种子
@@ -37,7 +41,7 @@ void Render::Run() {
 	//	清屏
 	cleardevice();
 
-	//	绘制游戏池边界，大小为 10*22 单元
+	//	绘制游戏池，大小为 10*22 单元
 	rectangle(UNIT * 10, UNIT * 5, UNIT * 20, UNIT * 27);
 	rectangle(UNIT * 30, UNIT * 5, UNIT * 40, UNIT * 27);
 
@@ -59,12 +63,12 @@ void Render::Run() {
 	outtextxy(UNIT * 42, 470, _T("↓：快速下落"));
 	
 	//	显示玩家信息
-	outtextxy(UNIT * 13.5, UNIT * 4, _T("Player A"));
-	outtextxy(UNIT * 33.5, UNIT * 4, _T("Player B"));
-
+	outtextxy(UNIT * 14, UNIT * 4, _T("Player A"));
+	outtextxy(UNIT * 34, UNIT * 4, _T("Player B"));
+	
 	//	开始新游戏
-	Game game;
 	game.NewGame();
+
 }
 
 //	结束界面
@@ -72,5 +76,10 @@ void Render::Over() {
 
 	//	清屏
 	cleardevice();
+
+	settextcolor(WHITE);
+	settextstyle(250, 0, _T("Courier"));
+	outtextxy(UNIT * 12, 100, _T("Game"));
+	outtextxy(UNIT * 22, 230, _T("OVER"));
 
 }

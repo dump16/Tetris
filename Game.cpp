@@ -2,32 +2,39 @@
 #include"Game.h"
 #include"Render.h"
 #include"Player.h"
+
 #include<graphics.h>
 #include<conio.h>
 #include<ctime>
+#include<cstring>
+#include<thread>
+using namespace std;
 
-//	开始新游戏
+#define	UNIT 20		//	方块单元的边长
+
+//	新游戏
 void Game::NewGame() {
-	Block block;
-	block.NewBlock();
+	player.player_a();
+	/*player.player_b();*/
+	GameOver();
 }
 
-//	结束游戏
+//	结束
 void Game::GameOver() {
+	
+}
+
+//	退出
+void Game::Exit() {
 
 }
 
-//	退出游戏
-void Game::Quit() {
-
-}
-
-//	暂停游戏
+//	暂停
 void Game::Pause() {
 
 }
 
-//	继续游戏 
+//	继续
 void Game::Continue() {
 
 }
